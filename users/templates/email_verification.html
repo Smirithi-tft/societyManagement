@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<body>
+    <p>Hi {{ name }}!</p>
+    <p>Please click the below link to verify your email.</p>
+    {% url 'verify-email' as the_url %}
+    <a href="http://localhost:8000{{ the_url }}" target="">Verify your email here</a>
+</body>
+</html>

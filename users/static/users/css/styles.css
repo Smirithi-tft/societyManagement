@@ -1,0 +1,139 @@
+.brand-name {
+    color: #1A132F;
+    font-size: 2.75rem;
+    margin-left: 3rem;
+}
+
+.navbar-links {
+    color: #1A132F;
+    font-size: 1.8rem;
+}
+
+.navbar-links:hover {
+    color: #7F7C82;
+    text-decoration: none;
+}
+
+.nav-search-bar {
+    margin-left: 30rem;
+}
+
+.nav-search-btn {
+    margin-left: 1.5rem;
+}
+
+.first-section {
+    position: relative;
+}
+
+.heading {
+    margin-bottom: 40px;
+}
+
+.message-section {
+    position: relative;
+    top: 100px;
+    width: 900px;
+}
+
+.second-section {
+    position: relative;
+}
+
+.apt-img {
+    width: inherit;
+    height: 400px;
+}
+
+.news-heading {
+    color: #1C658C;
+    margin-bottom: 20px;
+    font-size: 2.25rem;
+}
+
+.list-group {
+   height: 300px;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   overflow-y: auto;
+}
+
+.third-section {
+    position: relative;
+}
+
+.flats-heading {
+    color: #1C658C;
+    margin-top: 30px;
+    font-size: 2.25rem;
+}
+
+.card {
+    width: 22rem;
+    margin: 30px 50px;
+}
+
+.card-img {
+    width: 22rem;
+    height: 220px;
+}
+
+.apply-btn {
+    position: absolute;
+    left: 650px;
+}
+
+.fourth-section {
+    position: relative;
+    top: 30px;
+}
+
+.rows {
+    width: fit-content;
+    margin-left: 250px;
+}
+
+.card-facilities {
+    width: 10rem;
+}
+
+.facility-links {
+    color: #1A132F;
+    font-size: 1rem;
+}
+
+.facility-links:hover {
+    color: #1A132F;
+    text-decoration: none;
+}
+
+.fifth-section {
+    position: relative;
+}
+
+.services-heading {
+    color: #1C658C;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 2.25rem;
+}
+
+hr {
+    width: 400px;
+}
+
+.sixth-section{
+    position: relative;
+}
+
+.visitor-list {
+   height: 200px;
+   width: 300px;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   overflow-y: auto;
+}
+
+.seventh-section{
+    position: relative;
+}

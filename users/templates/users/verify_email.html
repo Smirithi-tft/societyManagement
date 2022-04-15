@@ -1,0 +1,12 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2 class="h2 success-text text-info">
+        Your email has been verified successfully! You can log in using the below link.
+    </h2>
+    <hr>
+    <a class="btn btn-outline-primary mt-3 login-btn" type="submit" href="{% url 'user-login' %}">
+        Log In
+    </a>
+{% endblock %}

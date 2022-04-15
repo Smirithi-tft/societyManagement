@@ -1,0 +1,198 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="second-section container-fluid">
+        <div class="row">
+            <div class="col-7">
+                <img src="{% static 'users/images/apartments.jpg' %}" alt="Society-img" class="float-left apt-img">
+            </div>
+            <div class="col-5">
+                <p class="display-4 news-heading">Recent News</p>
+                <ul class="list-group list-group-flush overflow-auto">
+                    <li class="list-group-item">News 1</li>
+                    <li class="list-group-item">News 2</li>
+                    <li class="list-group-item">News 3</li>
+                    <li class="list-group-item">News 4</li>
+                    <li class="list-group-item">News 5</li>
+                    <li class="list-group-item">News 6</li>
+                    <li class="list-group-item">News 7</li>
+                    <li class="list-group-item">News 8</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="third-section container-fluid">
+        <p class="display-4 text-center flats-heading">Flats Available</p>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <img src="{% static 'users/images/1bhk.jpg' %}" class="card-img-top card-img" alt="1bhk">
+                    <div class="card-body">
+                        <h5 class="card-title">1 BHK Flats</h5>
+                        <p class="card-text">Some info on the flat..</p>
+                        <a href="#" class="btn btn-outline-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                 <div class="card">
+                    <img src="{% static 'users/images/2bhk.jpg' %}" class="card-img-top card-img" alt="2bhk">
+                    <div class="card-body">
+                        <h5 class="card-title">2 BHK Flats</h5>
+                        <p class="card-text">Some info on the flat..</p>
+                        <a href="#" class="btn btn-outline-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="{% static 'users/images/3bhk.jpg' %}" class="card-img-top card-img" alt="3bhk">
+                    <div class="card-body">
+                        <h5 class="card-title">3 BHK Flats</h5>
+                        <p class="card-text">Some info on the flat..</p>
+                        <a href="#" class="btn btn-outline-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-outline-danger text-center apply-btn">Rent/Buy</button>
+    </div>
+    <div class="fourth-section container-fluid">
+        <p class="display-4 text-center flats-heading">Society Facilities</p>
+        <div class="row rows">
+            <div class="col-4">
+                <div class="card card-facilities border-info">
+                    <a href="#" class="facility-links">
+                        <div class="card-body text-center">
+                            Pool
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card card-facilities border-info">
+                    <a href="#" class="facility-links">
+                        <div class="card-body text-center">
+                            Creche
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card card-facilities border-info">
+                    <a href="#" class="facility-links">
+                        <div class="card-body text-center">
+                            Fitness center
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row rows">
+            <div class="col-4">
+                <div class="card card-facilities border-info">
+                    <a href="#" class="facility-links">
+                        <div class="card-body text-center">
+                            Community hall
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card card-facilities border-info">
+                    <a href="#" class="facility-links">
+                        <div class="card-body text-center">
+                            Prayer hall
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card card-facilities border-info">
+                    <a href="#" class="facility-links">
+                        <div class="card-body text-center">
+                            Grocery shop
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sixth-section container-fluid">
+        <p class="display-4 text-center services-heading">Visitors</p>
+        <ul class="list-group list-group-flush overflow-auto visitor-list">
+            <li class="list-group-item">Visitor-1</li>
+            <li class="list-group-item">Visitor-2</li>
+            <li class="list-group-item">Visitor-3</li>
+            <li class="list-group-item">Visitor-4</li>
+        </ul>
+        <a href="#" class="btn btn-outline-danger">Add visitor</a>
+    </div>
+    <div class="seventh-section container-fluid">
+        <p class="display-4 text-center services-heading">Payments</p>
+        <div class="row">
+            <div class="col-4 text-center">
+                <h2 class="h2">Society charges</h2>
+                <p>Security guard - Rs. 200</p>
+                <p>Lift - Rs. 200</p>
+                <p>Power backup - Rs. 500</p>
+                <p>Cleaning - Rs. 200</p>
+                <p>General maintenance - Rs. 300</p>
+            </div>
+            <div class="col-4 text-center">
+                <h2 class="h2">Utility bill</h2>
+                <p>Water - <span class="text-muted">As per bill</span> </p>
+                <p>Gas - Rs. 250</p>
+                <p>Electricity - <span class="text-muted">As per bill</span></p>
+            </div>
+            <div class="col-4 text-center">
+                <p>Rent also includes the charges listed here.</p>
+                <p class="text-muted">Click below to view the detailed bill.</p>
+                <a href="#" class="btn btn-outline-danger">Pay rent</a>
+            </div>
+        </div>
+    </div>
+    <div class="fifth-section container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <p class="display-4 text-center services-heading">Other links</p>
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action">Resident's List</a>
+                    <a href="#" class="list-group-item list-group-item-action">Emergency numbers</a>
+                    <a href="#" class="list-group-item list-group-item-action">Daily help</a>
+                    <a href="#" class="list-group-item list-group-item-action">Documents to be submitted</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <p class="display-4 text-center services-heading">Services Available</p>
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="h3 text-center">AC Service</h3>
+                        <p class="text-muted text-center">Timings: 10AM - 6PM</p>
+                        <p class="text-muted text-center">Phone: +91 9007863827</p>
+                        <hr>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="h3 text-center">Home Service</h3>
+                        <p class="text-muted text-center">Timings: 8AM - 6PM</p>
+                        <p class="text-muted text-center">Phone: +91 9007863827</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="h3 text-center">Pest Control</h3>
+                        <p class="text-muted text-center">Timings: 12PM - 5PM</p>
+                        <p class="text-muted text-center">Phone: +91 9007863827</p>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="h3 text-center">Grocery</h3>
+                        <p class="text-muted text-center">Timings: 7AM - 5PM</p>
+                        <p class="text-muted text-center">Phone: +91 9007863827</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

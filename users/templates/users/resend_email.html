@@ -1,0 +1,10 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2 class="h2 success-text text-secondary">If you haven't received the verification link. Click below</h2>
+    <hr>
+    <a class="btn btn-outline-dark mt-3 login-btn" type="submit" href="{% url 'send-email' %}">
+        Resend verification link
+    </a>
+{% endblock %}
