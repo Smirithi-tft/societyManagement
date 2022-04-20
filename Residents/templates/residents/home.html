@@ -1,5 +1,6 @@
 {% extends 'users/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div class="second-section container-fluid">
@@ -22,137 +23,209 @@
             </div>
         </div>
     </div>
-    <div class="third-section container-fluid">
-        <p class="display-4 text-center flats-heading">Flats Available</p>
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                    <img src="{% static 'users/images/1bhk.jpg' %}" class="card-img-top card-img" alt="1bhk">
-                    <div class="card-body">
-                        <h5 class="card-title">1 BHK Flats</h5>
-                        <p class="card-text">Some info on the flat..</p>
-                        <a href="#" class="btn btn-outline-primary">Read more</a>
+    {% if user.is_authenticated %}
+        <div class="third-section container-fluid">
+            <p class="display-4 text-center services-heading">Visitors</p>
+            <ul class="list-group list-group-flush overflow-auto visitor-list">
+                <li class="list-group-item">Visitor-1</li>
+                <li class="list-group-item">Visitor-2</li>
+                <li class="list-group-item">Visitor-3</li>
+                <li class="list-group-item">Visitor-4</li>
+            </ul>
+            <a href="#" class="btn btn-outline-danger">Add visitor</a>
+        </div>
+        <div class="seventh-section container-fluid">
+            <p class="display-4 text-center services-heading">Payments</p>
+            <div class="row">
+                <div class="col-4 text-center">
+                    <h2 class="h2">Society charges</h2>
+                    <p>Security guard - Rs. 200</p>
+                    <p>Lift - Rs. 200</p>
+                    <p>Power backup - Rs. 500</p>
+                    <p>Cleaning - Rs. 200</p>
+                    <p>General maintenance - Rs. 300</p>
+                </div>
+                <div class="col-4 text-center">
+                    <h2 class="h2">Utility bill</h2>
+                    <p>Water - <span class="text-muted">As per bill</span> </p>
+                    <p>Gas - Rs. 250</p>
+                    <p>Electricity - <span class="text-muted">As per bill</span></p>
+                </div>
+                <div class="col-4 text-center">
+                    <p>Rent also includes the charges listed here.</p>
+                    <p class="text-muted">Click below to view the detailed bill.</p>
+                    <a href="#" class="btn btn-outline-danger">Pay rent</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="sixth-section container-fluid">
+            <p class="display-4 text-center flats-heading">Flats Available</p>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <img src="{% static 'users/images/1bhk.jpg' %}" class="card-img-top card-img" alt="1bhk">
+                        <div class="card-body">
+                            <h5 class="card-title">1 BHK Flats</h5>
+                            <p class="card-text">Some info on the flat..</p>
+                            <a href="#" class="btn btn-outline-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                     <div class="card">
+                        <img src="{% static 'users/images/2bhk.jpg' %}" class="card-img-top card-img" alt="2bhk">
+                        <div class="card-body">
+                            <h5 class="card-title">2 BHK Flats</h5>
+                            <p class="card-text">Some info on the flat..</p>
+                            <a href="#" class="btn btn-outline-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="{% static 'users/images/3bhk.jpg' %}" class="card-img-top card-img" alt="3bhk">
+                        <div class="card-body">
+                            <h5 class="card-title">3 BHK Flats</h5>
+                            <p class="card-text">Some info on the flat..</p>
+                            <a href="#" class="btn btn-outline-primary">Read more</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                 <div class="card">
-                    <img src="{% static 'users/images/2bhk.jpg' %}" class="card-img-top card-img" alt="2bhk">
-                    <div class="card-body">
-                        <h5 class="card-title">2 BHK Flats</h5>
-                        <p class="card-text">Some info on the flat..</p>
-                        <a href="#" class="btn btn-outline-primary">Read more</a>
+            <button class="btn btn-lg btn-outline-danger text-center rent-btn" data-toggle="modal" data-target="#rentModal">
+                Rent
+            </button>
+            <div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="rentModalLabel">Rent Enquiry Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    {{ r_form|crispy }}
+                                </fieldset>
+                                <div class="modal-footer form-group">
+                                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="{% static 'users/images/3bhk.jpg' %}" class="card-img-top card-img" alt="3bhk">
-                    <div class="card-body">
-                        <h5 class="card-title">3 BHK Flats</h5>
-                        <p class="card-text">Some info on the flat..</p>
-                        <a href="#" class="btn btn-outline-primary">Read more</a>
+            <button class="btn btn-lg btn-outline-danger text-center buy-btn" data-toggle="modal" data-target="#buyModal">
+                Buy
+            </button>
+            <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="buyModalLabel">Buy Enquiry Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    {{ b_form|crispy }}
+                                </fieldset>
+                                <div class="modal-footer form-group">
+                                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-lg btn-outline-danger text-center apply-btn">Rent/Buy</button>
-    </div>
-    <div class="fourth-section container-fluid">
-        <p class="display-4 text-center flats-heading">Society Facilities</p>
-        <div class="row rows">
-            <div class="col-4">
-                <div class="card card-facilities border-info">
-                    <a href="#" class="facility-links">
-                        <div class="card-body text-center">
-                            Pool
-                        </div>
-                    </a>
+        <div class="fourth-section container-fluid">
+            <p class="display-4 text-center flats-heading">Society Facilities</p>
+            <div class="row rows">
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Pool
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Creche
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Fitness center
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Playground
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card card-facilities border-info">
-                    <a href="#" class="facility-links">
-                        <div class="card-body text-center">
-                            Creche
-                        </div>
-                    </a>
+            <div class="row rows">
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Community hall
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="card card-facilities border-info">
-                    <a href="#" class="facility-links">
-                        <div class="card-body text-center">
-                            Fitness center
-                        </div>
-                    </a>
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Prayer hall
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Grocery shop
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-facilities border-primary">
+                        <a href="#" class="facility-links">
+                            <div class="card-body text-center">
+                                Parking
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row rows">
-            <div class="col-4">
-                <div class="card card-facilities border-info">
-                    <a href="#" class="facility-links">
-                        <div class="card-body text-center">
-                            Community hall
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card card-facilities border-info">
-                    <a href="#" class="facility-links">
-                        <div class="card-body text-center">
-                            Prayer hall
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card card-facilities border-info">
-                    <a href="#" class="facility-links">
-                        <div class="card-body text-center">
-                            Grocery shop
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="sixth-section container-fluid">
-        <p class="display-4 text-center services-heading">Visitors</p>
-        <ul class="list-group list-group-flush overflow-auto visitor-list">
-            <li class="list-group-item">Visitor-1</li>
-            <li class="list-group-item">Visitor-2</li>
-            <li class="list-group-item">Visitor-3</li>
-            <li class="list-group-item">Visitor-4</li>
-        </ul>
-        <a href="#" class="btn btn-outline-danger">Add visitor</a>
-    </div>
-    <div class="seventh-section container-fluid">
-        <p class="display-4 text-center services-heading">Payments</p>
-        <div class="row">
-            <div class="col-4 text-center">
-                <h2 class="h2">Society charges</h2>
-                <p>Security guard - Rs. 200</p>
-                <p>Lift - Rs. 200</p>
-                <p>Power backup - Rs. 500</p>
-                <p>Cleaning - Rs. 200</p>
-                <p>General maintenance - Rs. 300</p>
-            </div>
-            <div class="col-4 text-center">
-                <h2 class="h2">Utility bill</h2>
-                <p>Water - <span class="text-muted">As per bill</span> </p>
-                <p>Gas - Rs. 250</p>
-                <p>Electricity - <span class="text-muted">As per bill</span></p>
-            </div>
-            <div class="col-4 text-center">
-                <p>Rent also includes the charges listed here.</p>
-                <p class="text-muted">Click below to view the detailed bill.</p>
-                <a href="#" class="btn btn-outline-danger">Pay rent</a>
-            </div>
-        </div>
-    </div>
+    {% endif %}
     <div class="fifth-section container-fluid">
         <div class="row">
             <div class="col-4">

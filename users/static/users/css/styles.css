@@ -32,7 +32,7 @@
 
 .message-section {
     position: relative;
-    top: 100px;
+    top: 5px;
     width: 900px;
 }
 
@@ -78,9 +78,13 @@
     height: 220px;
 }
 
-.apply-btn {
+.rent-btn {
+    margin-left: 600px;
+}
+
+.buy-btn {
     position: absolute;
-    left: 650px;
+    left: 700px;
 }
 
 .fourth-section {
@@ -90,7 +94,7 @@
 
 .rows {
     width: fit-content;
-    margin-left: 250px;
+    margin-left: 100px;
 }
 
 .card-facilities {
@@ -132,8 +136,4 @@ hr {
    margin-top: 30px;
    margin-bottom: 10px;
    overflow-y: auto;
-}
-
-.seventh-section{
-    position: relative;
 }

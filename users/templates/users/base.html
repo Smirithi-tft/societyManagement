@@ -47,17 +47,16 @@
     <div class="first-section container-fluid">
         <p class="display-3 text-center heading">Welcome to our society!</p>
     </div>
-    {% block messages %}
-    <div class="container message-section">
+    <div class="message-section container-fluid">
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         {{ message }}
                     </div>
                 {% endfor %}
             {% endif %}
     </div>
-    {% endblock %}
     {% block content %}
     {% endblock %}
     <div class="footer-section container-fluid"></div>
